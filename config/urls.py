@@ -5,12 +5,13 @@ from django.conf.urls.static import static
 from uploader.router import router as uploader_router
 from rest_framework.routers import DefaultRouter
 
-from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet
+from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet
 
 router = DefaultRouter()
 router.register(r"produtos", ProdutosViewSet)
 router.register(r"fornecedor", FornecedorViewSet)
 router.register(r"categoria", CategoriaViewSet)
+router.register(r"descontos", DescontoViewSet)
 
 urlpatterns = [
     path("api/media/", include(uploader_router.urls)),
