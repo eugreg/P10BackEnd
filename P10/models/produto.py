@@ -1,14 +1,16 @@
 from django.db import models
 from uploader.models import Image
-from P10.models import  Fornecedor
+
+from P10.models import  Fornecedor, Categoria
 
 
 class Produtos(models.Model):
     nome = models.CharField(max_length=100)
     descricao = models.CharField(max_length=150)
-    Preço = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    preco = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     quantidade = models.IntegerField(null=True, default=0)
-    fornecedor = models.ManyToManyField(Fornecedor,related_name="Produtos")
+    fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT,related_name="Produtos")
+    categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT,related_name="Produtos")
     capa = models.ForeignKey(
         Image,
         related_name="+",

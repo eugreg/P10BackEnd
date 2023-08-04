@@ -22,7 +22,7 @@ class ProdutosListSerializer(ModelSerializer):
     class Meta:
         capa=ImageSerializer(required=False)
         model = Produtos
-        fields = ["id", "nome", "Preço"]
+        fields = ["id", "nome", "preco"]
 
 
 class ProdutosDetailSerializer(ModelSerializer):
