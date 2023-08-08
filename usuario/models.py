@@ -8,6 +8,7 @@ from .managers import CustomUserManager
 class Usuario(AbstractUser):
     username = None
     email = models.EmailField(_("e-mail address"), unique=True)
+    rg = models.CharField(_("RG"), max_length=9, blank=True, null=True)
     cpf = models.CharField(_("CPF"), max_length=11, blank=True, null=True)
     telefone = models.CharField(_("Phone"), max_length=11, blank=True, null=True)
     data_nascimento = models.DateField(
@@ -17,6 +18,7 @@ class Usuario(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     EMAIL_FIELD = "email"
+   
 
     objects = CustomUserManager()
 
