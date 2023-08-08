@@ -3,3 +3,4 @@ from .cliente import Cliente
 from .desconto import Descontos
 from .categoria import Categoria
 from .produto import Produtos
+from .compra import Compra, ItensCompra
