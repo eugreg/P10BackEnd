@@ -6,13 +6,14 @@ from uploader.router import router as uploader_router
 from usuario.router import router as usuario_router
 from rest_framework.routers import DefaultRouter
 
-from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet
+from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet, SubCategoriaViewSet
 
 router = DefaultRouter()
 router.register(r"produtos", ProdutosViewSet)
 router.register(r"fornecedor", FornecedorViewSet)
 router.register(r"categoria", CategoriaViewSet)
 router.register(r"descontos", DescontoViewSet)
+router.register(r"subcategoria", SubCategoriaViewSet)
 
 urlpatterns = [
     path("api/media/", include(uploader_router.urls)),
