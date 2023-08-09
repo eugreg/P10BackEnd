@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "P10",
+   "drf_spectacular",
     "rest_framework",
     "uploader",
     "usuario",
@@ -122,3 +123,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
 
 AUTH_USER_MODEL = "usuario.Usuario"
+
+REST_FRAMEWORK = {
+    
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+SPECTACULAR_SETTINGS = {
+    "TITLE": "P10 API",
+    "DESCRIPTION": "API para gerenciamento de uma loja do 10, incluindo endpoints e documentação.",
+    "VERSION": "1.0.0",
+}
