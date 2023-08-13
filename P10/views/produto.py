@@ -9,6 +9,6 @@ class ProdutosViewSet(ModelViewSet):
         "list": ProdutosListSerializer,
         "retrieve": ProdutosDetailSerializer,
     }
-
+    
     def get_serializer_class(self):
         return self.serializer_class.get(self.action, ProdutosSerializer)
