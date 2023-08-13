@@ -27,9 +27,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "P10",
-   "drf_spectacular",
+    "corsheaders",
+    "drf_spectacular",
     "rest_framework",
+    "P10",
     "uploader",
     "usuario",
 ]
@@ -42,6 +43,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -133,3 +136,4 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API para gerenciamento de uma loja do 10, incluindo endpoints e documentação.",
     "VERSION": "1.0.0",
 }
+CORS_ALLOW_ALL_ORIGINS = True
