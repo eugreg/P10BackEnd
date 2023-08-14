@@ -10,7 +10,7 @@ class FornecedorSerializer(ModelSerializer):
 class FornecedorListSerializer(ModelSerializer):
     class Meta:
         model = Fornecedor
-        fields = ["id", "nome", "endereco", "telefone"]
+        fields = ["id", "nome", "endereco", "telefone", "email"]
 
 class FornecedorDetailSerializer(ModelSerializer):    
     class Meta:
