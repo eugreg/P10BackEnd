@@ -15,10 +15,10 @@ from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, Desc
 
 router = DefaultRouter()
 router.register(r"produtos", ProdutosViewSet)
-router.register(r"fornecedor", FornecedorViewSet)
-router.register(r"categoria", CategoriaViewSet)
+router.register(r"fornecedores", FornecedorViewSet)
+router.register(r"categorias", CategoriaViewSet)
 router.register(r"descontos", DescontoViewSet)
-router.register(r"subcategoria", SubCategoriaViewSet)
+router.register(r"subcategorias", SubCategoriaViewSet)
 
 urlpatterns = [
     path("api/media/", include(uploader_router.urls)),
