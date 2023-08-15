@@ -7,4 +7,4 @@ class Sazonal(models.Model):
         return self.descrição
         
     class Meta:
-        verbose_name_plural = "Sazonal"
+        verbose_name_plural = "Sazonais"
