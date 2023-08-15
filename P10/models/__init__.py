@@ -4,3 +4,4 @@ from .categoria import Categoria
 from .subcategoria import SubCategoria
 from .produto import Produtos
 from .compra import Compra, ItensCompra
+from .sazonal import Sazonal
