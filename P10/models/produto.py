@@ -1,7 +1,10 @@
 from django.db import models
 from uploader.models import Image
 
-from P10.models import  Fornecedor, Categoria, Descontos, SubCategoria
+from .fornecedor import  Fornecedor
+from .categoria import Categoria
+from .desconto import Descontos
+from .sazonal import Sazonal
 
 
 class Produtos(models.Model):
@@ -11,8 +14,7 @@ class Produtos(models.Model):
     quantidade = models.IntegerField(null=True, default=0)
     fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT,related_name="Produtos")
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT,related_name="Produtos")
-    subcategoria = models.ForeignKey(SubCategoria,on_delete=models.PROTECT,null=True,related_name="Produtos")
-    #sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
+    sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
     desconto = models.ForeignKey(Descontos,on_delete=models.PROTECT,related_name="Produtos")
     capa = models.ForeignKey(
         Image,
