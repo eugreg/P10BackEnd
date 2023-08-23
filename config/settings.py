@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "P10",
     "uploader",
     "usuario",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
