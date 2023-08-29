@@ -16,13 +16,9 @@ class Produtos(models.Model):
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT, null=False, related_name="Produtos")
     sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
     desconto = models.ForeignKey(Descontos,on_delete=models.PROTECT, null=True, related_name="Produtos")
-    capa = models.ForeignKey(
+    imagem = models.ManyToManyField(
         Image,
         related_name="+",
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        default=None,
     )
 
     def __str__(self):

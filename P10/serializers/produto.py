@@ -6,21 +6,21 @@ from uploader.serializers import ImageSerializer
 
 class ProdutosSerializer(ModelSerializer):
     class Meta:
-        capa_attachment_key = SlugRelatedField(
-            source="capa",
+        imagem_attachment_key = SlugRelatedField(
+            source="imagem",
             queryset=Image.objects.all(),
             slug_field="attachment_key",
             required=False,
             write_only=True,
         )
-        capa = ImageSerializer(required=False, read_only=True)
+        imagem = ImageSerializer(required=False, read_only=True)
         model = Produtos
         fields = "__all__"
 
 
 class ProdutosListSerializer(ModelSerializer):
     class Meta:
-        capa=ImageSerializer(required=False)
+        imagem=ImageSerializer(required=False)
         model = Produtos
         fields = ["id", "nome", "categoria", "fornecedor", "quantidade", "preco", "desconto"]
 
