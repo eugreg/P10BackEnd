@@ -11,10 +11,12 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet, SubCategoriaViewSet
+from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet, SubCategoriaViewSet, SazonalViewSet, CompraViewSet
 
 router = DefaultRouter()
 router.register(r"produtos", ProdutosViewSet)
+router.register(r"compras", CompraViewSet)
+router.register(r"sazonal", SazonalViewSet)
 router.register(r"fornecedores", FornecedorViewSet)
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"descontos", DescontoViewSet)

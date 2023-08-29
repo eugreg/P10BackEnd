@@ -4,3 +4,4 @@ from .categoria import  CategoriaSerializer
 from .descontos import DescontoSerializer
 from .subcategoria import SubCategoriaSerializer
 from .sazonal import SazonalSerializer
+from .compra import CompraSerializer
