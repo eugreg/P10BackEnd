@@ -4,5 +4,6 @@ from P10.models import Compra
 
 class CompraSerializer(ModelSerializer):
     class Meta:
+        usuario = CharField(source="usuario.username", read_only=True)
         model = Compra
         fields = "__all__"
