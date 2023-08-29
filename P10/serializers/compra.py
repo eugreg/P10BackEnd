@@ -5,7 +5,8 @@ from P10.models import Compra, ItensCompra
 class ItensCompraSerializer(ModelSerializer):
     class Meta:
         model = ItensCompra
-        fields = "__all__"
+        fields = ["produto", "quantidade"]
+        depth = 2
         
 
 class CompraSerializer(ModelSerializer):
