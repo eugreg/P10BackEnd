@@ -47,7 +47,7 @@ class CriarEditarItenSerializer(ModelSerializer):
 
 class CriarEditarCompraSerializer(ModelSerializer):
     itens = CriarEditarItenSerializer(many=True)
-    # usuario = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    usuario = serializers.HiddenField(default=serializers.CurrentUserDefault())
 
     class Meta:
         model = Compra
