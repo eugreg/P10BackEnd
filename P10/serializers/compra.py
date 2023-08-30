@@ -30,7 +30,7 @@ class CriarEditarItenSerializer(ModelSerializer):
         fields = ["produto", "quantidade" ]
 
     def validate(self, data):
-        if data["quantidade"] > data["livro"].quantidade:
+        if data["quantidade"] > data["produto"].quantidade:
             raise serializers.ValidationError(
                 {"quantidade": "Quantidade solicitada não disponível em estoque."}
             )
