@@ -27,13 +27,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
-    "drf_spectacular",
-    "rest_framework",
     "P10",
+    "corsheaders",
+    "django_extensions",
+    "drf_spectacular",
     "uploader",
     "usuario",
-    "django_extensions",
+    "rest_framework",
+    "rest_framework_simplejwt",
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,10 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 AUTH_USER_MODEL = "usuario.Usuario"
 
 REST_FRAMEWORK = {
-    
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissions",),
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 SPECTACULAR_SETTINGS = {
