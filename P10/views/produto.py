@@ -7,9 +7,11 @@ from P10.serializers import( ProdutosListSerializer, ProdutosDetailSerializer, P
 
 class ProdutosViewSet(ModelViewSet):
     queryset = Produtos.objects.all()
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = [ "categoria"]
     search_fields = ["nome", "categoria", "fornecedor"]
+    ordering_fields = ["nome", "categoria"]
+    ordering = ["nome"]
 
     serializer_class = {
         "list": ProdutosListSerializer,
