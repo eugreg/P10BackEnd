@@ -12,6 +12,7 @@ class Produtos(models.Model):
     descricao = models.CharField(max_length=150, null=False)
     preco = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     quantidade = models.IntegerField(null=True, default=0)
+    data = models.DateField()
     fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT, null=False, related_name="Produtos")
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT, null=False, related_name="Produtos")
     sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
