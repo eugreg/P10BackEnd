@@ -1,10 +1,14 @@
 from rest_framework.viewsets import ModelViewSet
+from django_filters.rest_framework import DjangoFilterBackend
 
 from P10.models import Produtos
 from P10.serializers import( ProdutosListSerializer, ProdutosDetailSerializer, ProdutosSerializer)
 
 class ProdutosViewSet(ModelViewSet):
     queryset = Produtos.objects.all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = [ "categoria"]
+
     serializer_class = {
         "list": ProdutosListSerializer,
         "retrieve": ProdutosDetailSerializer,
