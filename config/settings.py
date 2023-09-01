@@ -2,12 +2,11 @@ import os
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 
 SECRET_KEY = (
@@ -20,7 +19,11 @@ MODE = os.getenv("MODE")
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False")
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://*.fl0.io/"]
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://*.fl0.io/",
+]
 
 ALLOWED_HOSTS = ["*"]
 
@@ -47,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -153,4 +157,6 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 if MODE == "PRODUCTION":
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    STATICFILES_STORAGE = (
+        "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    )
