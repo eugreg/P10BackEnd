@@ -1,5 +1,10 @@
 
 {
     "python.formatting.provider": "black",
-    "python.formatting.blackArgs": ["--line-length=79"]
+    "python.formatting.blackArgs": [
+        "--line-length=79"
+    ],
+    "python.analysis.extraPaths": [
+        "./__pypackages__/3.10/lib"
+    ]
 }
