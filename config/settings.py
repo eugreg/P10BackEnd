@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "P10",
     "django_filters",
+    'taggit',
     "corsheaders",
     "django_extensions",
     "drf_spectacular",

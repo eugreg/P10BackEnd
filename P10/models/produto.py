@@ -14,11 +14,12 @@ class Produtos(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     quantidade = models.IntegerField(null=True, default=0)
     data = models.DateField()
+    tags = models.CharField(max_length=200)
     fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT, null=False, related_name="Produtos")
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT, null=False, related_name="Produtos")
     marca = models.ForeignKey(Marca,on_delete=models.PROTECT, null=False, related_name="Produtos")
-    sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
-    desconto = models.ForeignKey(Descontos,on_delete=models.PROTECT, null=True, related_name="Produtos")
+    sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, blank=True, related_name="Produtos")
+    desconto = models.ForeignKey(Descontos,on_delete=models.PROTECT, null=True, blank=True, related_name="Produtos")
     imagem = models.ManyToManyField(
         Image,
         related_name="+",
