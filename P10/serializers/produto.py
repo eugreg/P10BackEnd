@@ -20,9 +20,9 @@ class ProdutosSerializer(ModelSerializer):
 
 class ProdutosListSerializer(ModelSerializer):
     class Meta:
-        imagem=ImageSerializer(required=False)
+        imagem=ImageSerializer(required=True)
         model = Produtos
-        fields = ["id", "nome", "categoria", "fornecedor", "quantidade", "preco", "desconto"]
+        fields = ["id", "nome", "categoria", "fornecedor", "quantidade", "preco", "desconto", "imagem"]
 
 
 class ProdutosDetailSerializer(ModelSerializer):
