@@ -19,8 +19,18 @@ class ProdutosSerializer(ModelSerializer):
 
 
 class ProdutosListSerializer(ModelSerializer):
+    imagem = SerializerMethodField()
+
+    def get_imagem(self, obj):
+        imagem_id = obj.imagem.first()  
+
+        if imagem_id:
+            imagem = Image.objects.get(pk=imagem_id)    
+            return imagem.file.url 
+        
+        return None
+
     class Meta:
-        imagem=ImageSerializer(required=True)
         model = Produtos
         fields = ["id", "nome", "categoria", "fornecedor", "quantidade", "preco", "desconto", "imagem"]
 
