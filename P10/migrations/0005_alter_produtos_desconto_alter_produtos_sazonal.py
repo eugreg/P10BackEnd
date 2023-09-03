@@ -6,7 +6,7 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("P10", "0004_produtos_tags"),
+        ("P10", "0003_categoria_materialcommunityicons"),
     ]
 
     operations = [
