@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer, SlugRelatedField
+from rest_framework.serializers import ModelSerializer, SlugRelatedField, SerializerMethodField
 from P10.models import Produtos
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
@@ -22,13 +22,14 @@ class ProdutosListSerializer(ModelSerializer):
     imagem = SerializerMethodField()
 
     def get_imagem(self, obj):
-        imagem_id = obj.imagem.first()  
+        imagem_instance = obj.imagem.first()  
 
-        if imagem_id:
-            imagem = Image.objects.get(pk=imagem_id)    
-            return imagem.file.url 
-        
+        if imagem_instance:
+            return imagem_instance.file.url  
+
         return None
+
+
 
     class Meta:
         model = Produtos
