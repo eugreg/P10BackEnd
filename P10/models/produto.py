@@ -5,6 +5,7 @@ from .fornecedor import  Fornecedor
 from .categoria import Categoria
 from .desconto import Descontos
 from .sazonal import Sazonal
+from .marca import Marca
 
 
 class Produtos(models.Model):
@@ -15,6 +16,7 @@ class Produtos(models.Model):
     data = models.DateField()
     fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT, null=False, related_name="Produtos")
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT, null=False, related_name="Produtos")
+    marca = models.ForeignKey(Marca,on_delete=models.PROTECT, null=False, related_name="Produtos")
     sazonal = models.ForeignKey(Sazonal, on_delete=models.PROTECT, null=True, related_name="Produtos")
     desconto = models.ForeignKey(Descontos,on_delete=models.PROTECT, null=True, related_name="Produtos")
     imagem = models.ManyToManyField(

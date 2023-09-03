@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from P10.models import Produtos, Fornecedor, Compra, Categoria, Descontos, ItensCompra, Sazonal, SubCategoria
+from P10.models import Produtos, Fornecedor, Compra, Categoria, Descontos, ItensCompra, Sazonal, SubCategoria, Marca
 
 admin.site.register(Produtos)
 admin.site.register(Fornecedor)
@@ -9,6 +9,7 @@ admin.site.register(Descontos)
 admin.site.register(ItensCompra)
 admin.site.register(Sazonal)
 admin.site.register(SubCategoria)
+admin.site.register(Marca)
 
 
 class IntensCompraInline(admin.TabularInline):
