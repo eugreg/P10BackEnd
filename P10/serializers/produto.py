@@ -29,11 +29,9 @@ class ProdutosListSerializer(ModelSerializer):
 
         return None
 
-
-
     class Meta:
         model = Produtos
-        fields = ["id", "nome", "categoria", "fornecedor", "quantidade", "preco", "desconto", "imagem"]
+        fields = "__all__"
 
 
 class ProdutosDetailSerializer(ModelSerializer):
