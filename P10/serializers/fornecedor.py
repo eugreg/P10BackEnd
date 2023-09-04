@@ -8,6 +8,7 @@ class FornecedorSerializer(ModelSerializer):
         fields = "__all__"
 
 class FornecedorListSerializer(ModelSerializer):
+    
     class Meta:
         model = Fornecedor
         fields = ["id", "nome", "endereco", "telefone", "email"]
