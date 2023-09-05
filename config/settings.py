@@ -21,8 +21,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://*.fl0.io/",
 ]
 
-ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
