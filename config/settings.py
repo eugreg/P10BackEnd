@@ -97,7 +97,9 @@ else:
 
 
 print(MODE, DATABASES)
-print(os.getenv('SECRET_KEY'), os.getenv('DEBUG'), DEBUG)
+print('ola')
+print(os.getenv('SECRET_KEY'))
+print(os.getenv('DEBUG'), DEBUG)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
