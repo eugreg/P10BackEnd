@@ -32,10 +32,10 @@ class ProdutosListSerializer(ModelSerializer):
     class Meta:
         model = Produtos
         fields = "__all__"
-
+        depth = 2
 
 class ProdutosDetailSerializer(ModelSerializer):
     class Meta:
         model = Produtos
         fields = "__all__"
-        depth = 1
+        depth = 2
