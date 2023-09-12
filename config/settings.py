@@ -135,8 +135,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-STATIC_URL = "static/"
-
 STATIC_URL = "/static/"
 
 if MODE in ["PRODUCTION", "MIGRATE"]:
@@ -145,12 +143,9 @@ if MODE in ["PRODUCTION", "MIGRATE"]:
     STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-
-
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_URL = "http://localhost:8000/api/media/"
+MEDIA_URL = "/media/"
 MEDIA_ENDPOINT = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 FILE_UPLOAD_PERMISSIONS = 0o640
