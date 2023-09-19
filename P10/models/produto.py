@@ -6,6 +6,7 @@ from .categoria import Categoria
 from .desconto import Descontos
 from .sazonal import Sazonal
 from .marca import Marca
+from .tag import Tag
 
 
 class Produtos(models.Model):
@@ -14,7 +15,7 @@ class Produtos(models.Model):
     preco = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     quantidade = models.IntegerField(null=True, default=0)
     data = models.DateField()
-    tags = models.CharField(max_length=200)
+    tag = models.ManyToManyField(Tag, related_name="Produtos")
     fornecedor = models.ForeignKey(Fornecedor,on_delete=models.PROTECT, null=False, related_name="Produtos")
     categoria = models.ForeignKey(Categoria,on_delete=models.PROTECT, null=False, related_name="Produtos")
     marca = models.ForeignKey(Marca,on_delete=models.PROTECT, null=False, related_name="Produtos")

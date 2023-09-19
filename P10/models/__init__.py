@@ -6,4 +6,5 @@ from .desconto import Descontos
 from .produto import Produtos
 from .marca import Marca
 from .categoria import Categoria
+from .tag import Tag
 
