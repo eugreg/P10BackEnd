@@ -6,3 +6,4 @@ from .subcategoria import SubCategoriaViewSet
 from .marca import MarcaViewSet
 from .sazonal import SazonalViewSet
 from .compra import CompraViewSet
+from .tag import TagViewSet

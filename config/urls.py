@@ -16,7 +16,7 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet, SubCategoriaViewSet, SazonalViewSet, CompraViewSet, MarcaViewSet
+from P10.views import ProdutosViewSet, FornecedorViewSet, CategoriaViewSet, DescontoViewSet, SubCategoriaViewSet, SazonalViewSet, CompraViewSet, MarcaViewSet, TagViewSet
 
 router = DefaultRouter()
 router.register(r"produtos", ProdutosViewSet)
@@ -26,6 +26,7 @@ router.register(r"marca", MarcaViewSet)
 router.register(r"fornecedores", FornecedorViewSet)
 router.register(r"categorias", CategoriaViewSet)
 router.register(r"descontos", DescontoViewSet)
+router.register(r"tag", TagViewSet)
 router.register(r"subcategorias", SubCategoriaViewSet)
 
 urlpatterns = [
