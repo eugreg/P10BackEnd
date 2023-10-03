@@ -3,7 +3,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 
 from P10.models import Produtos
-from P10.serializers import( ProdutosListSerializer, ProdutosDetailSerializer, ProdutosSerializer)
+from P10.serializers import( ProdutosListSerializer, ProdutosDetailSerializer, ProdutosSerializer, ProdutosCreateSerializer)
 
 class ProdutosViewSet(ModelViewSet):
     queryset = Produtos.objects.all()
@@ -16,6 +16,7 @@ class ProdutosViewSet(ModelViewSet):
     serializer_class = {
         "list": ProdutosListSerializer,
         "retrieve": ProdutosDetailSerializer,
+        "create": ProdutosCreateSerializer
     }
     
     def get_serializer_class(self):

@@ -1,4 +1,4 @@
-from .produto import  ProdutosDetailSerializer, ProdutosListSerializer, ProdutosSerializer
+from .produto import  ProdutosDetailSerializer, ProdutosListSerializer, ProdutosSerializer, ProdutosCreateSerializer
 from .fornecedor import FornecedorDetailSerializer, FornecedorListSerializer, FornecedorSerializer
 from .categoria import  CategoriaSerializer
 from .descontos import DescontoSerializer
