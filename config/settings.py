@@ -20,6 +20,7 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://*.fl0.io/",
+    "https://p10administracao.surge.sh/"
 ]
 
 
